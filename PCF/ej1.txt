@@ -1,0 +1,32 @@
+EJERCICIO 1)
+
+a) resta := subt
+Complejidad: O(1)
+
+b) fix (exp : N -> N -> N) (n : N) . fun (m : N) . ifz m then 1 else mul n (exp n (subt m 1))
+Complejidad: O(m²)
+
+c) fix (fact : N -> N) (n : N) . ifz n then 1 else mul n (fact (subt n 1))
+Complejidad: O(n²)
+
+EJERCICIO 2)
+
+a) Bool := N 
+
+true := 0
+false := 1
+ifthenelse := fun (b : Bool) . fun (x : N) . fun (y : N) . ifz b then x else y
+
+  i) No se puede porque el ifthenelse evalúa las dos ramas (el lenguaje es cbv).
+  ii) Se podría utilizar funciones lambda (que son valores) con el resultado deseado,
+   y solo evaluarlas cuando se requiere ese valor.
+  iii) Considerado.-
+
+b) Pair := (N -> N -> N -> N)
+
+pair := fun (b : N) . fun (x : N) . fun (y : N) . ifthenelse b x y
+proj1 := fun (p : Pair) . p true
+proj2 := fun (p : Pair) . p false
+
+EJERCICIO 3)
+
