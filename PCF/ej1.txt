@@ -30,3 +30,20 @@ proj2 := fun (p : Pair) . p false
 
 EJERCICIO 3)
 
+menor : N -> N -> Bool
+menor := fun (x : N) . 
+         fun (y : N) . ifz (subt x y) then (ifz (subt y x) then false 
+                                                           else true)
+                                      else false
+
+fix (gcd : N -> N -> N) (m : N) . 
+    fun (n : N) . ifz n then m
+                        else (ifthenelse (menor m n) 
+                                         (gcd m (subt n m)) 
+                                         (gcd (subt m n) n))
+
+EJERCICIO 4)
+
+
+
+
