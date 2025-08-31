@@ -1,0 +1,5 @@
+min : (N -> N) -> N
+min := fun (f : N -> N) . min_aux f 0 
+
+fix (min_aux : (N -> N) -> N -> N) (f : N) . fun (z : N) . 
+                                             ifz f z then z else min_aux f (add z 1) 
