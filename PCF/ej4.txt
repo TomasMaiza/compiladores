@@ -1,5 +1,5 @@
 EJERCICIO 4)
 
-fix (R_N : N -> ((N -> N) -> N -> N) -> N) (z : N) . 
+fix (R_N : (N -> ((N -> N) -> N -> N)) -> N) (z : N) . 
     fun (s : (N -> N) -> N -> N) .
     fun (n : N) . ifz n then z else s (R_T z s (subt n 1)) (subt n 1)

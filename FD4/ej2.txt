@@ -1,0 +1,13 @@
+EJERCICIO 2)
+
+FD4> let v = print "Prueba" (1 + 1)
+
+La expresión concatenta la cadena "Prueba" a los mensajes.
+
+Al usar v en otro término, se concatena dicha cadena.
+
+ v 'v'("Prueba") 2   v 'v'("Prueba") 2
+---------------------------------------- E-ADD
+      v + v 'v' ("PruebaPrueba") 4
+
+FD4> let f = fun (x:Nat) -> print "Prueba 2" (x + x)
